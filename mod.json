@@ -1,0 +1,23 @@
+{
+   "Name": "fvnkhead.Hotfixes",
+   "Description": "Squirrel hotfixes for server side exploits",
+   "Version": "1.0.0",
+   "LoadPriority": 1,
+   "ConVars": [
+       // kills a player at respawn if their name is not valid
+       // can be changed to kick later when UIDs work again
+       {
+           "Name": "hotfix_invalid_player_name",
+           "DefaultValue": "1"
+       }
+   ],
+   "Scripts": [
+       {
+           "Path": "hotfixes.nut",
+           "RunOn": "SERVER",
+           "ServerCallback": {
+               "After":"Hotfixes_Init"
+           }
+       }
+   ]
+}
